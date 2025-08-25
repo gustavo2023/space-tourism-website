@@ -82,13 +82,17 @@ select {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
   text-wrap: balance;
   line-height: 1.1;
+  font-weight: 400;
 }
 
 p {
   text-wrap: pretty;
+  font-weight: 400;
 }
 
 textarea:not([rows]) {
@@ -186,6 +190,19 @@ textarea:not([rows]) {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.numbered-title {
+  font-family: var(--ff-sans-condensed);
+  font-size: clamp(var(--fs-300), 1rem + 2vw, var(--fs-500));
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.numbered-title span {
+  margin-right: 1rem;
+  font-weight: 700;
+  color: hsl(var(--clr-white) / 0.25);
 }
 
 /* End Utility Classes */
