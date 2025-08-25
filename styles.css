@@ -1,3 +1,28 @@
+/* Custom Properties */
+
+:root {
+  /* Colors */
+  --clr-blue-300: 231 77% 90%;
+  --clr-blue-900: 230 35% 7%;
+  --clr-white: 0 0% 100%;
+
+  /* Typography */
+
+  /* Font Sizes */
+  --fs-200: 0.875rem;
+  --fs-300: 1rem;
+  --fs-400: 1.125rem;
+  --fs-500: 1.75rem;
+  --fs-600: 2rem;
+  --fs-700: 3.5rem;
+  --fs-800: 6.25rem;
+
+  /* Font Family */
+  --ff-serif: "Bellefair", serif;
+  --ff-sans-condensed: "Barlow Condensed", sans-serif;
+  --ff-sans-normal: "Barlow", sans-serif;
+}
+
 /* CSS Reset */
 
 *,
@@ -30,6 +55,10 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: var(--ff-sans-normal);
+  font-size: var(--fs-400);
+  color: hsl(var(--clr-white));
+  background-color: hsl(var(--clr-blue-900));
 }
 
 img,
@@ -118,3 +147,47 @@ textarea:not([rows]) {
   white-space: nowrap;
   clip-path: inset(50%);
 }
+
+.bg-dark {
+  background-color: hsl(var(--clr-blue-900));
+}
+
+.bg-accent {
+  background-color: hsl(var(--clr-blue-300));
+}
+
+.bg-white {
+  background-color: hsl(var(--clr-white));
+}
+
+.text-dark {
+  color: hsl(var(--clr-blue-900));
+}
+
+.text-accent {
+  color: hsl(var(--clr-blue-300));
+}
+
+.text-white {
+  color: hsl(var(--clr-white));
+}
+
+.letter-spacing-1 {
+  letter-spacing: 0.1em;
+}
+
+.letter-spacing-2 {
+  letter-spacing: 0.2em;
+}
+
+.letter-spacing-3 {
+  letter-spacing: 0.3em;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* End Utility Classes */
+
+/* Custom Styles */
