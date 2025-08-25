@@ -92,8 +92,29 @@ textarea:not([rows]) {
 
 .flex {
   display: flex;
+  gap: var(--gap, 1rem);
 }
 
 .grid {
   display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.container {
+  padding-inline: 2rem;
+  margin-inline: auto;
+  max-width: 80rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(50%);
 }
