@@ -255,6 +255,10 @@ textarea:not([rows]) {
   opacity: 1;
 }
 
+.primary-navigation {
+  font-family: var(--ff-sans-condensed);
+}
+
 .primary-navigation a > span {
   font-weight: 700;
   margin-right: 0.5em;
