@@ -33,8 +33,18 @@
         />
       </div>
 
+      <button
+        class="mobile-nav-toggle"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <span class="visually-hidden">Menu</span>
+      </button>
+
       <nav>
         <ul
+          id="primary-navigation"
+          data-visible="false"
           class="primary-navigation underline-indicator flex ff-sans-condensed"
         >
           <li class="active">
@@ -67,28 +77,23 @@
       </nav>
     </header>
 
-
-      <div class="grid-container grid-container--home">
-        <div>
-          <h1
-            class="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1"
-          >
-            So, you want to travel to
-            <span class="d-block fs-900 ff-serif text-white">Space</span>
-          </h1>
-          <p>
-            Let’s face it; if you want to go to space, you might as well
-            genuinely go to outer space and not hover kind of on the edge of it.
-            Well sit back, and relax because we’ll give you a truly out of this
-            world experience!
-          </p>
-        </div>
-
-        <a
-          href="#"
-          class="explore-btn uppercase ff-serif text-dark bg-white"
-          >Explore</a
-        >
+    <div class="grid-container grid-container--home">
+      <div>
+        <h1 class="text-accent fs-400 ff-sans-cond uppercase letter-spacing-1">
+          So, you want to travel to
+          <span class="d-block fs-900 ff-serif text-white">Space</span>
+        </h1>
+        <p>
+          Let’s face it; if you want to go to space, you might as well genuinely
+          go to outer space and not hover kind of on the edge of it. Well sit
+          back, and relax because we’ll give you a truly out of this world
+          experience!
+        </p>
       </div>
+
+      <a href="#" class="explore-btn uppercase ff-serif text-dark bg-white"
+        >Explore</a
+      >
+    </div>
   </body>
 </html>
