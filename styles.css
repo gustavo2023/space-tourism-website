@@ -298,6 +298,10 @@ body {
   background-position: bottom center;
 }
 
+.home {
+  background-image: url("./assets/home/background-home-mobile.jpg");
+}
+
 @media (min-width: 35rem) {
   .home {
     background-position: center center;
@@ -354,16 +358,19 @@ body {
   color: hsl(var(--clr-white) / 0.25);
 }
 
-.primary-navigation {
-  --underline-gap: 2rem;
-  background: hsl(var(--clr-blue-900) / 0.95);
+.primary-header {
+  justify-content: space-between;
+  align-items: center;
 }
 
-.mobile-nav-toggle {
-  display: none;
-  background: transparent;
-  border: none;
-  cursor: pointer;
+.logo {
+  margin: 2rem clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.primary-navigation {
+  --gap: clamp(1.5rem, 5vw, 3.5rem);
+  --underline-gap: 2rem;
+  background: hsl(var(--clr-blue-900) / 0.95);
 }
 
 @supports (backdrop-filter: blur(2rem)) {
@@ -371,6 +378,18 @@ body {
     background: hsl(var(--clr-white) / 0.05);
     backdrop-filter: blur(2rem);
   }
+}
+
+.primary-navigation a > span {
+  font-weight: 700;
+  margin-right: 0.5em;
+}
+
+.mobile-nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 @media (max-width: 35rem) {
@@ -414,9 +433,37 @@ body {
   }
 }
 
-.primary-navigation a > span {
-  font-weight: 700;
-  margin-right: 0.5em;
+@media (min-width: 35rem) {
+  .primary-navigation {
+    padding-inline: clamp(3rem, 7vw, 7rem);
+  }
+}
+
+@media (35rem < width < 45rem) {
+  .primary-navigation a > span {
+    display: none;
+  }
+}
+
+@media (min-width: 45rem) {
+  .primary-header::after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin-right: -2.5rem;
+    order: 1;
+    background-color: hsl(var(--clr-white) / 0.25);
+  }
+
+  nav {
+    order: 2;
+  }
+
+  .primary-navigation {
+    margin-block: 2rem;
+  }
 }
 
 .tab-list {
@@ -456,8 +503,4 @@ body {
 
 .dot-indicator > [aria-selected="true"] {
   background-color: hsl(var(--clr-white) / 1);
-}
-
-.home {
-  background-image: url("./assets/home/background-home-mobile.jpg");
 }
