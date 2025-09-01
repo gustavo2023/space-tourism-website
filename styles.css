@@ -207,6 +207,21 @@ textarea:not([rows]) {
   clip-path: inset(50%);
 }
 
+.skip-link {
+  position: absolute;
+  z-index: 9999;
+  background-color: hsl(var(--clr-white));
+  color: hsl(var(--clr-blue-900));
+  padding: 0.5em 1em;
+  margin-inline: auto;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 .bg-dark {
   background-color: hsl(var(--clr-blue-900));
 }
