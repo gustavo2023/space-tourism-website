@@ -12,7 +12,7 @@
   --fs-200: 0.875rem;
   --fs-300: 1rem;
   --fs-400: 1.125rem;
-  --fs-500: 1.75rem;
+  --fs-500: 1rem;
   --fs-600: 2rem;
   --fs-700: 3.5rem;
   --fs-800: 6.25rem;
@@ -36,6 +36,7 @@
     --fs-800: 5rem;
     --fs-700: 2.5rem;
     --fs-600: 1.5rem;
+    --fs-500: 1.25rem;
     --fs-400: 1rem;
   }
 }
@@ -45,6 +46,7 @@
     --fs-800: 6.25rem;
     --fs-700: 3.5rem;
     --fs-600: 2rem;
+    --fs-500: 1.75rem;
     --fs-400: 1.125rem;
   }
 }
@@ -175,6 +177,38 @@ textarea:not([rows]) {
 
 .grid-container * {
   max-width: 50ch;
+}
+
+.grid-container--destination {
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "content";
+}
+
+.numbered-title {
+  grid-area: title;
+}
+
+.grid-container--destination > img {
+  grid-area: image;
+  max-width: 60%;
+}
+
+.grid-container--destination > .tab-list {
+  grid-area: tabs;
+}
+
+.grid-container--destination > .destination-info {
+  grid-area: content;
+}
+
+.destination-meta {
+  flex-direction: column;
+  border-top: 1px solid hsl(var(--clr-white) / 0.25);
+  padding-top: 2.5rem;
+  margin-top: 2.5rem;
 }
 
 @media (min-width: 45rem) {
