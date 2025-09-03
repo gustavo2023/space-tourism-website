@@ -24,3 +24,50 @@ export function focusRovingNavigation(e) {
 
   e.preventDefault();
 }
+
+export function initDestinationTabs(tabList) {
+  tabList.addEventListener("click", (e) => {
+    const tab = e.target.closest('[role="tab"]');
+    if (tab) activateTab(tabList, tab);
+  });
+
+  tabList.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      const tab = e.target.closest('[role="tab"]');
+      if (tab) {
+        e.preventDefault();
+        activateTab(tabList, tab);
+      }
+    }
+  });
+}
+
+function hideAll(root, selector) {
+  root
+    .querySelectorAll(selector)
+    .forEach((el) => el.setAttribute("hidden", ""));
+}
+
+function show(root, selector) {
+  root.querySelector(selector).removeAttribute("hidden");
+}
+
+function activateTab(tabList, tab) {
+  const current = tabList.querySelector('[aria-selected="true"]');
+  if (current && current !== tab)
+    current.setAttribute("aria-selected", "false");
+  tab.setAttribute("aria-selected", "true");
+
+  const panelId = tab.getAttribute("aria-controls");
+  const imageId = tab.getAttribute("data-image");
+  const root =
+    tabList.closest("[data-destination-root]") ||
+    tabList.closest("main") ||
+    document;
+
+  hideAll(root, '[role="tabpanel"]');
+  show(root, `#${panelId}`);
+
+  hideAll(root, "[data-destination-image]");
+  show(root, `#${imageId}`);
+}

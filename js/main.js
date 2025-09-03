@@ -1,4 +1,4 @@
-import { focusRovingNavigation } from "./tabs.js";
+import { focusRovingNavigation, initDestinationTabs } from "./tabs.js";
 
 // DOM Elements
 const nav = document.querySelector(".primary-navigation");
@@ -18,3 +18,4 @@ navToggle.addEventListener("click", () => {
 });
 
 tabList.addEventListener("keydown", focusRovingNavigation);
+initDestinationTabs(tabList);
