@@ -21,7 +21,7 @@
     />
     <link rel="stylesheet" href="../styles.css" />
 
-    <script src="../js/main.js" defer></script>
+    <script src="../js/main.js" type="module" defer></script>
   </head>
   <body class="destination">
     <a href="#main" class="skip-link">Skip to main content</a>
@@ -129,6 +129,7 @@
           role="tab"
           aria-controls="moon-tab"
           class="uppercase ff-sans-condensed text-accent letter-spacing-2"
+          tabindex="0"
         >
           Moon
         </button>
@@ -137,6 +138,7 @@
           role="tab"
           aria-controls="mars-tab"
           class="uppercase ff-sans-condensed text-accent letter-spacing-2"
+          tabindex="-1"
         >
           Mars
         </button>
@@ -145,6 +147,7 @@
           role="tab"
           aria-controls="europa-tab"
           class="uppercase ff-sans-condensed text-accent letter-spacing-2"
+          tabindex="-1"
         >
           Europa
         </button>
@@ -153,6 +156,7 @@
           role="tab"
           aria-controls="titan-tab"
           class="uppercase ff-sans-condensed text-accent letter-spacing-2"
+          tabindex="-1"
         >
           Titan
         </button>
