@@ -586,15 +586,21 @@ body {
   --flow-space: 2rem;
   grid-template-areas:
     "title"
-    "image"
+    "content"
     "tabs"
-    "content";
+    "image";
 }
 
 .grid-container--crew > img {
   grid-area: image;
   max-width: 60%;
-  border-bottom: 1px solid hsl(var(--clr-white) / 0.25);
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 0,
+    black 85%,
+    transparent
+  );
 }
 
 .grid-container--crew > .dot-indicator {
@@ -672,5 +678,9 @@ body {
       ". title title ."
       ". content image ."
       ". tabs image .";
+  }
+
+  .grid-container--crew > .dot-indicator {
+    justify-self: start;
   }
 }
