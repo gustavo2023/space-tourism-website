@@ -21,7 +21,7 @@
     />
     <link rel="stylesheet" href="../styles.css" />
 
-    <script src="../js/main.js" defer></script>
+    <script src="../js/main.js" type="module" defer></script>
   </head>
   <body class="crew">
     <a href="#main" class="skip-link">Skip to main content</a>
@@ -63,9 +63,7 @@
             >
           </li>
           <li>
-            <a
-              href="./crew.html"
-              class="uppercase text-white letter-spacing-2"
+            <a href="./crew.html" class="uppercase text-white letter-spacing-2"
               ><span aria-hidden="true">02</span>Crew</a
             >
           </li>
@@ -80,27 +78,57 @@
       </nav>
     </header>
 
-    <main id="main" class="grid-container grid-container--crew flow">
+    <main id="main" class="grid-container grid-container--crew flow" data-root>
       <h1 class="numbered-title">
         <span aria-hidden="true">02</span> Meet your crew
       </h1>
 
-      <div class="dot-indicator flex">
-        <button aria-selected="true">
+      <div class="dot-indicator flex" role="tablist" aria-label="Crew members">
+        <button
+          aria-selected="true"
+          aria-controls="commander-tab"
+          role="tab"
+          data-image="commander-image"
+          tabindex="0"
+        >
           <span class="visually-hidden">The Commander</span>
         </button>
-        <button aria-selected="false">
+        <button
+          aria-selected="false"
+          aria-controls="mission-specialist-tab"
+          role="tab"
+          data-image="mission-specialist-image"
+          tabindex="-1"
+        >
           <span class="visually-hidden">The mission specialist</span>
         </button>
-        <button aria-selected="false">
+        <button
+          aria-selected="false"
+          aria-controls="pilot-tab"
+          role="tab"
+          data-image="pilot-image"
+          tabindex="-1"
+        >
           <span class="visually-hidden">The pilot</span>
         </button>
-        <button aria-selected="false">
+        <button
+          aria-selected="false"
+          aria-controls="crew-engineer-tab"
+          role="tab"
+          data-image="crew-engineer-image"
+          tabindex="-1"
+        >
           <span class="visually-hidden">The crew engineer</span>
         </button>
       </div>
 
-      <article class="crew-details flow">
+      <!-- Commander Info -->
+      <article
+        id="commander-tab"
+        class="crew-details flow"
+        role="tabpanel"
+        tabindex="0"
+      >
         <header class="flow flow--space-small">
           <h2 class="fs-600 ff-serif uppercase">Commander</h2>
           <p class="fs-700 uppercase ff-serif">Douglas Hurley</p>
@@ -113,7 +141,70 @@
         </p>
       </article>
 
-      <picture>
+      <!-- Mission Specialist Info -->
+      <article
+        hidden
+        id="mission-specialist-tab"
+        class="crew-details flow"
+        role="tabpanel"
+        tabindex="0"
+      >
+        <header class="flow flow--space-small">
+          <h2 class="fs-600 ff-serif uppercase">Mission Specialist</h2>
+          <p class="fs-700 uppercase ff-serif">Mark Shuttleworth</p>
+        </header>
+
+        <p class="text-accent">
+          Mark Richard Shuttleworth is the founder and CEO of Canonical, the
+          company behind the Linux-based Ubuntu operating system. Shuttleworth
+          became the first South African to travel to space as a space tourist.
+        </p>
+      </article>
+
+      <!-- Pilot Info -->
+      <article
+        hidden
+        id="pilot-tab"
+        class="crew-details flow"
+        role="tabpanel"
+        tabindex="0"
+      >
+        <header class="flow flow--space-small">
+          <h2 class="fs-600 ff-serif uppercase">Pilot</h2>
+          <p class="fs-700 uppercase ff-serif">Douglas Hurley</p>
+        </header>
+
+        <p class="text-accent">
+          Pilot on the first operational flight of the SpaceX Crew Dragon to the
+          International Space Station. Glover is a commander in the U.S. Navy
+          where he pilots an F/A-18.He was a crew member of Expedition 64, and
+          served as a station systems flight engineer.
+        </p>
+      </article>
+
+      <!-- Crew Engineer Info -->
+      <article
+        hidden
+        id="crew-engineer-tab"
+        class="crew-details flow"
+        role="tabpanel"
+        tabindex="0"
+      >
+        <header class="flow flow--space-small">
+          <h2 class="fs-600 ff-serif uppercase">Flight Engineer</h2>
+          <p class="fs-700 uppercase ff-serif">Anousheh Ansari</p>
+        </header>
+
+        <p class="text-accent">
+          Anousheh Ansari is an Iranian American engineer and co-founder of
+          Prodea Systems. Ansari was the fourth self-funded space tourist, the
+          first self-funded woman to fly to the ISS, and the first Iranian in
+          space.
+        </p>
+      </article>
+
+      <!-- Commander Image -->
+      <picture id="commander-image" data-picture>
         <source
           srcset="../assets/crew/image-douglas-hurley.webp"
           type="image/webp"
@@ -121,6 +212,39 @@
         <img
           src="../assets/crew/image-douglas-hurley.png"
           alt="Douglas Hurley"
+        />
+      </picture>
+
+      <!-- Mission Specialist Image -->
+      <picture id="mission-specialist-image" data-picture hidden>
+        <source
+          srcset="../assets/crew/image-mark-shuttleworth.webp"
+          type="image/webp"
+        />
+        <img
+          src="../assets/crew/image-mark-shuttleworth.png"
+          alt="Mark Shuttleworth"
+        />
+      </picture>
+
+      <!-- Pilot Image -->
+      <picture id="pilot-image" data-picture hidden>
+        <source
+          srcset="../assets/crew/image-victor-glover.webp"
+          type="image/webp"
+        />
+        <img src="../assets/crew/image-victor-glover.png" alt="Victor Glover" />
+      </picture>
+
+      <!-- Crew Engineer Image -->
+      <picture id="crew-engineer-image" data-picture hidden>
+        <source
+          srcset="../assets/crew/image-anousheh-ansari.webp"
+          type="image/webp"
+        />
+        <img
+          src="../assets/crew/image-anousheh-ansari.png"
+          alt="Anousheh Ansari"
         />
       </picture>
     </main>
