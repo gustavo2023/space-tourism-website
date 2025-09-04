@@ -61,13 +61,13 @@ function activateTab(tabList, tab) {
   const panelId = tab.getAttribute("aria-controls");
   const imageId = tab.getAttribute("data-image");
   const root =
-    tabList.closest("[data-destination-root]") ||
+    tabList.closest("[data-root]") ||
     tabList.closest("main") ||
     document;
 
   hideAll(root, '[role="tabpanel"]');
   show(root, `#${panelId}`);
 
-  hideAll(root, "[data-destination-image]");
+  hideAll(root, "[data-picture]");
   show(root, `#${imageId}`);
 }
