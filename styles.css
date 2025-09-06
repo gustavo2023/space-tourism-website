@@ -312,6 +312,12 @@ body {
   background-image: url("./assets/home/background-home-mobile.jpg");
 }
 
+.destination,
+.crew,
+.technology {
+  background-attachment: fixed;
+}
+
 .destination {
   background-repeat: no-repeat;
   background-image: url("./assets/destination/background-destination-mobile.jpg");
