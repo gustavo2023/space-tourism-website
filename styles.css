@@ -323,6 +323,7 @@ body {
 }
 
 .technology {
+  background-repeat: no-repeat;
   background-image: url("./assets/technology/background-technology-mobile.jpg");
 }
 
@@ -575,6 +576,28 @@ body {
   background-color: hsl(var(--clr-white) / 1);
 }
 
+.number-indicator > * {
+  cursor: pointer;
+  border: 1px solid hsl(var(--clr-white) / 0.5);
+  border-radius: 50%;
+  width: 3rem;
+  aspect-ratio: 1;
+  background-color: transparent;
+  font-family: var(--ff-serif);
+  font-size: var(--fs-500);
+}
+
+.number-indicator > *:hover,
+.number-indicator > *:focus {
+  border-color: hsl(var(--clr-white) / 1);
+}
+
+.number-indicator > [aria-selected="true"] {
+  background-color: hsl(var(--clr-white) / 1);
+  color: hsl(var(--clr-blue-900));
+  border-color: hsl(var(--clr-white) / 1);
+}
+
 /* Layout Styles */
 
 .grid-container {
@@ -661,6 +684,31 @@ body {
   color: hsl(var(--clr-white) / 0.5);
 }
 
+.grid-container--technology {
+  --flow-space: 2rem;
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "content";
+}
+
+.grid-container--technology > picture {
+  grid-area: image;
+  max-width: 100%;
+  max-inline-size: none;
+  inline-size: calc(100% + 2rem);
+  margin-inline: -1rem;
+}
+
+.grid-container--technology > .number-indicator {
+  grid-area: tabs;
+}
+
+.grid-container--technology > .tech-details {
+  grid-area: content;
+}
+
 @media (min-width: 35rem) {
   .numbered-title {
     justify-self: start;
@@ -743,5 +791,38 @@ body {
   .grid-container--crew > .dot-indicator {
     --gap: 2.3rem;
     justify-self: start;
+  }
+
+  .grid-container--technology {
+    --container-gap: 3rem;
+    grid-template-columns:
+      clamp(4rem, 6vw, 8rem)
+      fit-content(6.5rem)
+      1.2fr
+      1.2fr;
+    padding-right: 0;
+    justify-items: start;
+    grid-template-areas:
+      ". title title ."
+      ". tabs content image"
+      ". tabs content image";
+  }
+
+  .number-indicator > * {
+    width: 5rem;
+  }
+
+  .grid-container--technology > .number-indicator {
+    --gap: 2rem;
+    flex-direction: column;
+    justify-self: start;
+  }
+
+  .grid-container--technology > picture {
+    grid-column: 4;
+    justify-self: end;
+    max-width: none;
+    width: 100%;
+    align-self: end;
   }
 }
