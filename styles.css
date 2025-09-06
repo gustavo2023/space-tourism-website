@@ -686,7 +686,7 @@ body {
 }
 
 .crew-details h2,
-.tech-details h2 {
+.tech-details p:first-of-type {
   color: hsl(var(--clr-white) / 0.5);
 }
 
